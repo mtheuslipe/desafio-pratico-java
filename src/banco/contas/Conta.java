@@ -52,4 +52,10 @@ public abstract class Conta implements iConta {
         System.out.println(String.format("Número %d", this.numero));
         System.out.println(String.format("Saldo %f", this.saldo));
     }
+
+    protected void imprimirTudo(){
+        for (int i = 0; i<=this.getNumero(); i++){
+            imprimirComum();
+        }
+    }
 }

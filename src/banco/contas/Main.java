@@ -5,27 +5,19 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Scanner entrada =  new Scanner(System.in);
-        System.out.println("Olá, deseja abrir uma conta? (true ou false): ");
-        boolean criaConta = entrada.nextBoolean();
+            Scanner entrada = new Scanner(System.in);
+            System.out.println("Olá, deseja abrir uma conta? (true ou false): ");
+            boolean criaConta = entrada.nextBoolean();
+        do {
+            if (criaConta == true) {
+                novoClient();
+                Scanner confirmation = new Scanner(System.in);
+                System.out.println("Quer abrir outra conta? (true ou false): ");
+                criaConta= confirmation.nextBoolean();
+            } else System.out.println("Tchau!");
 
-        if (criaConta == true){
-            novoClient();
-        }else System.out.println("Tchau!");
-
-        /*
-        Cliente matheus = new Cliente();
-        matheus.setNome("Matheus");
-
-        Conta cc= new ContaCorrente(matheus);
-        Conta cp= new ContaPoupanca(matheus);
-
-
-        cc.depositar(100);
-        cc.transferir(cp,50);
-
-        cc.imprimirComum();
-        cp.imprimirComum();*/
+        } while (criaConta == true);
+        listarContas();
     }
     public static void novoClient(){
         Scanner entrada= new Scanner(System.in);
@@ -52,4 +44,7 @@ public class Main {
         cp.imprimirComum();
 
     }
-}
+    public static void listarContas(){
+        }
+    }
+
